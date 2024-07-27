@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm">
+        <label for="input1">Input 1:</label>
+        <input type="text" id="input1" name="input1">
+        <br>
+        <label for="input2">Input 2:</label>
+        <input type="text" id="input2" name="input2">
+        <br>
+        <label for="input3">Input 3:</label>
+        <input type="text" id="input3" name="input3">
+        <br>
+        <button type="button" onclick="duplicateInputs()">Duplicate Inputs</button>
+      </form>
+    <script>
+function duplicateInputs() {
+      // Get the form element
+var field1Value = document.getElementById('input1').value;
+            var field2Value = document.getElementById('input2').value;
+            var field3Value = document.getElementById('input3').value;
+
+            // Create new input elements
+            var newField1 = document.createElement('input');
+            var newField2 = document.createElement('input');
+            var newField3 = document.createElement('input');
+
+            // Set the type and values of the new input elements
+            newField1.type = 'text';
+            newField1.value = field1Value;
+
+            newField2.type = 'text';
+            newField2.value = field2Value;
+
+            newField3.type = 'text';
+            newField3.value = field3Value;
+
+            // Append the new input elements to the form
+            document.getElementById('myForm').appendChild(newField1);
+            document.getElementById('myForm').appendChild(newField2);
+            document.getElementById('myForm').appendChild(newField3);
+}
+
+    </script>
+</body>
+</html>
